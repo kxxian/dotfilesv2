@@ -148,8 +148,8 @@ for i in groups:
 
 # Default params for layouts 
 layout_theme = dict(
-        border_width=1,
-        border_focus="ffffff",
+        border_width=2,
+        border_focus="1793D1",
         padding=2,
         margin=8)
 
@@ -180,6 +180,8 @@ screens = [
     Screen(
         top=bar.Bar(
             [
+                widget.Spacer(5),
+
                 widget.CurrentLayoutIcon(
                     scale=0.8),
 
@@ -252,6 +254,7 @@ screens = [
                     charge_char=UNICODE_CHARGING,
                     full_char="",
                     show_short_text=True),
+                widget.Spacer(10),
             ],
             24,
             # border_width=[2, 0, 2, 0],  # Draw top and bottom borders
