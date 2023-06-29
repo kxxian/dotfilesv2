@@ -19,6 +19,11 @@ alias g="git"
 
 # Alias for lazyness
 alias cc="clear"
+alias archm=". $HOME/shell_scripts/archm.sh"
+alias snaps=". $HOME/shell_scripts/snaps.sh"
+alias snapl=". $HOME/shell_scripts/snapl.sh"
+alias snapr=". $HOME/shell_scripts/snapr.sh"
+alias snapd=". $HOME/shell_scripts/snapd.sh"
 
 # Get fastest mirrors in your neighborhood 
 alias mirror="sudo reflector -c 'Hong Kong' -f 30 -l 30 --number 10 --verbose --save /etc/pacman.d/mirrorlist"
