@@ -1,0 +1,21 @@
+[user]
+	email = zerodashpor@gmail.com 
+	name = devx-ph 
+[alias]
+	st = status
+	ct = commit
+	br = branch
+	co = checkout
+	l = log --oneline
+[url "git@github.com:devx-ph/"]
+	insteadOf = https://github.com/devx-ph/
+[init]
+	defaultBranch = development
+[credential "https://github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
+[protocol "file"]
+	allow = always
