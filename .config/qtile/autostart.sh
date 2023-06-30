@@ -11,3 +11,6 @@ udiskie &
 
 # Fancy visuals (E.g: enable opacity) 
 picom &
+
+# Start the Emacs server 
+/usr/bin/emacs --daemon

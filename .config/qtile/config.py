@@ -58,6 +58,7 @@ SCRIPT_EMOJI = f"{HOME}/.config/rofi/emoji.sh &"
 
 # Commands 
 CMD_OPEN_CALENDAR = "kitty --class calcurse  -o confirm_os_window_close=0 --execute calcurse"
+CMD_DOOM_EMACS = "emacsclient -c -a 'emacs'"
 CMD_FILE_MANAGER = "pcmanfm"
 CMD_SCREENSHOT = "flameshot gui"
 CMD_BRIGHTNESS_UP = "brightnessctl set 5%+"
@@ -125,6 +126,7 @@ keys = [
     # Launchers
     Key([mod], "space", lazy.spawn(SCRIPT_APP_MENU), desc="Launch app menu"),
     Key([mod], "e", lazy.spawn(CMD_FILE_MANAGER), desc="Launch file manager"),
+    Key([alt], "Return", lazy.spawn(CMD_DOOM_EMACS), desc="Launch doom emacs"),
     Key([alt], "w", lazy.spawn(SCRIPT_WINDOW_MENU), desc="Launch app window"),
     Key([], "Print", lazy.spawn(CMD_SCREENSHOT), desc="Launch screnshot"),
 
