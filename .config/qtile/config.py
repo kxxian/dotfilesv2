@@ -47,11 +47,18 @@ UNICODE_CPU = " "
 UNICODE_RAM = " "
 UNICODE_COPIED = " "
 
+# Scripts 
+HOME = os.path.expanduser('~')
+SCRIPT_AUTOSTART = f"{HOME}/.config/qtile/autostart.sh"
+SCRIPT_POWER_MENU = f"{HOME}/.config/rofi/powermenu.sh &"
+SCRIPT_APP_MENU = f"{HOME}/.config/rofi/launcher.sh &"
+SCRIPT_WINDOW_MENU = f"{HOME}/.config/rofi/window_launcher.sh &"
+SCRIPT_OPEN_IN_QUTEBROWSER = f"{HOME}/.config/rofi/open_in_qutebrowser.sh &"
+SCRIPT_EMOJI = f"{HOME}/.config/rofi/emoji.sh &"
+
 # Commands 
 CMD_OPEN_CALENDAR = "kitty --class calcurse  -o confirm_os_window_close=0 --execute calcurse"
 CMD_FILE_MANAGER = "pcmanfm"
-CMD_APP_LAUNCHER = "rofi -show drun"
-CMD_APP_WINDOW = "rofi -show window"
 CMD_SCREENSHOT = "flameshot gui"
 CMD_BRIGHTNESS_UP = "brightnessctl set 5%+"
 CMD_BRIGHTNESS_DOWN = "brightnessctl set 5%-"
@@ -69,12 +76,14 @@ keys = [
     Key([mod], "j", lazy.layout.down(), desc="Move focus down"),
     Key([mod], "k", lazy.layout.up(), desc="Move focus up"),
     Key([mod], "space", lazy.layout.next(), desc="Move window focus to other window"),
+
     # Move windows between left/right columns or move up/down in current stack.
     # Moving out of range in Columns layout will create new column.
     Key([mod, "shift"], "h", lazy.layout.shuffle_left(), desc="Move window to the left"),
     Key([mod, "shift"], "l", lazy.layout.shuffle_right(), desc="Move window to the right"),
     Key([mod, "shift"], "j", lazy.layout.shuffle_down(), desc="Move window down"),
     Key([mod, "shift"], "k", lazy.layout.shuffle_up(), desc="Move window up"),
+
     # Grow windows. If current window is on the edge of screen and direction
     # will be to screen edge - window would shrink.
     Key([mod, "control"], "h", lazy.layout.grow_left(), desc="Grow window to the left"),
@@ -82,6 +91,10 @@ keys = [
     Key([mod, "control"], "j", lazy.layout.grow_down(), desc="Grow window down"),
     Key([mod, "control"], "k", lazy.layout.grow_up(), desc="Grow window up"),
     Key([mod], "n", lazy.layout.normalize(), desc="Reset all window sizes"),
+
+    # Resize main window
+    Key([mod], "g", lazy.layout.grow_main(), desc="Grow main panel (Useful for specific layout"),
+    Key([mod, "shift"], "g", lazy.layout.shrink_main(), desc="Shrink main pael (Useful for specific layout)"),
     # Toggle between split and unsplit sides of stack.
     # Split = all windows displayed
     # Unsplit = 1 window displayed, like Max layout, but still with
@@ -110,10 +123,15 @@ keys = [
     Key([], "XF86AudioLowerVolume", lazy.spawn(CMD_AUDIO_DOWN), desc="Decrease audio volume"),
 
     # Launchers
-    Key([mod], "space", lazy.spawn(CMD_APP_LAUNCHER), desc="Launch app menu"),
+    Key([mod], "space", lazy.spawn(SCRIPT_APP_MENU), desc="Launch app menu"),
     Key([mod], "e", lazy.spawn(CMD_FILE_MANAGER), desc="Launch file manager"),
-    Key([alt], "w", lazy.spawn(CMD_APP_WINDOW), desc="Launch app window"),
+    Key([alt], "w", lazy.spawn(SCRIPT_WINDOW_MENU), desc="Launch app window"),
     Key([], "Print", lazy.spawn(CMD_SCREENSHOT), desc="Launch screnshot"),
+
+    # Menus 
+    Key([mod], "p", lazy.spawn(SCRIPT_POWER_MENU), desc="Launch power menu"),
+    Key([mod], "q", lazy.spawn(SCRIPT_OPEN_IN_QUTEBROWSER), desc="Open Qutebrowser shortcut"),
+    Key([mod, "shift"], "Equal", lazy.spawn(SCRIPT_EMOJI), desc="Launch emoji list"),
 
     # Settings
     Key([mod], "b", lazy.hide_show_bar(position="top"), desc="Toggle bar"),
@@ -149,7 +167,7 @@ for i in groups:
 # Default params for layouts 
 layout_theme = dict(
         border_width=2,
-        border_focus="1793D1",
+        border_focus="#1793D1",
         padding=2,
         margin=8)
 
@@ -266,8 +284,8 @@ screens = [
 # Hooks 
 @hook.subscribe.startup_once 
 def autostart():
-    home = os.path.expanduser('~/.config/qtile/autostart.sh')
-    subprocess.call([home])
+    """ Executes a script on Qtile startup """ 
+    subprocess.Popen([SCRIPT_AUTOSTART])
 
 # Drag floating layouts.
 mouse = [
@@ -312,4 +330,4 @@ wl_input_rules = None
 #
 # We choose LG3D to maximize irony: it is a 3D non-reparenting WM written in
 # java that happens to be on java's whitelist.
-wmname = "LG3D"
+wmname = "Qtile"

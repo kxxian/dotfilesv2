@@ -38,7 +38,7 @@ Dotfiles and instructions to make my Arch Linux portable and easy to replicate
   ]
    ```
    **Note 1:** Set a password for root and add an non root user \
-   **Note 2:** You dont need chroot into the installed SO, just reboot and login
+   **Note 2:** You dont need chroot into the installed distro, just reboot and login
 
 ## AUR helper - [Yay](https://github.com/Jguer/yay#readme)
 - Install yay
