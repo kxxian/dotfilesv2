@@ -25,6 +25,10 @@ alias snapl=". $HOME/shell_scripts/snapl.sh"
 alias snapr=". $HOME/shell_scripts/snapr.sh"
 alias snapd=". $HOME/shell_scripts/snapd.sh"
 
+# PATHS
+export PATH="/opt/flutter/bin:$PATH"
+export PATH="$HOME/.config/emacs/bin:$PATH"
+
 # Get fastest mirrors in your neighborhood 
 alias mirror="sudo reflector -c 'Hong Kong' -f 30 -l 30 --number 10 --verbose --save /etc/pacman.d/mirrorlist"
 alias mirrord="sudo reflector -c 'Hong Kong' --latest 50 --number 20 --sort delay --save /etc/pacman.d/mirrorlist"
