@@ -59,7 +59,7 @@ SCRIPT_EMOJI = f"{HOME}/.config/rofi/emoji.sh &"
 # Commands 
 CMD_OPEN_CALENDAR = "kitty --class calcurse  -o confirm_os_window_close=0 --execute calcurse"
 CMD_DOOM_EMACS = "emacsclient -c -a 'emacs'"
-CMD_FILE_MANAGER = "pcmanfm"
+CMD_FILE_MANAGER = "kitty -e ranger"
 CMD_SCREENSHOT = "flameshot gui"
 CMD_BRIGHTNESS_UP = "brightnessctl set 5%+"
 CMD_BRIGHTNESS_DOWN = "brightnessctl set 5%-"

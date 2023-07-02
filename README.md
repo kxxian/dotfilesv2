@@ -134,7 +134,7 @@ Dotfiles and instructions to make my Arch Linux portable and easy to replicate
                 sudo usermod igortxra -a -G admin
             ```
 
-## File Manager - [Pcmanfm](https://wiki.archlinux.org/title/PCManFM)
+## File Manager - [ranger](https://wiki.archlinux.org/title/Ranger)
 
 ## Other
 ### Discord 
