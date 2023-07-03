@@ -13,7 +13,6 @@ alias dotfiles="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
 
 # Alias for adapt commands to rewritten in rust commands 
 alias ps="procs"
-alias ls="exa --icons"
 
 # Git alias 
 alias g="git"
