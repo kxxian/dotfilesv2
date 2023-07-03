@@ -51,7 +51,7 @@ Dotfiles and instructions to make my Arch Linux portable and easy to replicate
 ## Fonts
 - Install these fonts
     ```bash
-        yay -S ttf-font-awesome ttf-fira-code
+        yay -S ttf-font-awesome ttf-fira-code ttf-nerd-fonts-symbols
     ```
 
 ## Dotfiles (This reposiory)

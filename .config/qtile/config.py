@@ -113,7 +113,6 @@ keys = [
     Key([mod], "w", lazy.window.kill(), desc="Kill focused window"),
     Key([mod, "control"], "r", lazy.reload_config(), desc="Reload the config"),
     Key([mod, "control"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
-    Key([mod], "r", lazy.spawncmd(), desc="Spawn a command using a prompt widget"),
 
     # Laptop keys 
     Key([], "XF86MonBrightnessUp", lazy.spawn(CMD_BRIGHTNESS_UP), desc="Increase brightness"),
@@ -126,7 +125,6 @@ keys = [
     # Launchers
     Key([mod], "space", lazy.spawn(SCRIPT_APP_MENU), desc="Launch app menu"),
     Key([mod], "e", lazy.spawn(CMD_FILE_MANAGER), desc="Launch file manager"),
-    Key([alt], "Return", lazy.spawn(CMD_DOOM_EMACS), desc="Launch doom emacs"),
     Key([alt], "w", lazy.spawn(SCRIPT_WINDOW_MENU), desc="Launch app window"),
     Key([], "Print", lazy.spawn(CMD_SCREENSHOT), desc="Launch screnshot"),
 
