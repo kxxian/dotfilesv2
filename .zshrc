@@ -13,6 +13,7 @@ alias dotfiles="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
 
 # Alias for adapt commands to rewritten in rust commands 
 alias ps="procs"
+alias ls="exa --icons"
 
 # Git alias 
 alias g="git"
@@ -26,8 +27,13 @@ alias snapr=". $HOME/shell_scripts/snapr.sh"
 alias snapd=". $HOME/shell_scripts/snapd.sh"
 
 # PATHS
-export PATH="/opt/flutter/bin:$PATH"
-export PATH="$HOME/.config/emacs/bin:$PATH"
+
+# Flutter 
+export PATH="/$HOME/.flutter/flutter/bin:$PATH"
+
+export PATH="$HOME/.local/bin:$PATH"
+
+# LunarVim 
 
 # Get fastest mirrors in your neighborhood 
 alias mirror="sudo reflector -c 'Hong Kong' -f 30 -l 30 --number 10 --verbose --save /etc/pacman.d/mirrorlist"
