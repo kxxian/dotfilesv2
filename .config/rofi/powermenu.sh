@@ -11,7 +11,7 @@ rofi_cmd() {
 	rofi -dmenu \
 		-theme "$HOME/.config/rofi/config.rasi" \
     -location 0 \
-		-theme-str 'window {width: 200px; height: 220px; padding: 0;}' \
+		-theme-str 'window {width: 210px; height: 260px; padding: 0;}' \
     -theme-str 'inputbar {enabled: false;}' \
     -theme-str 'listview {border: 0px; scrollbar: 0;}' \
     -yoffset -50 \
