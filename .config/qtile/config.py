@@ -40,8 +40,8 @@ alt = "mod1"
 terminal = "kitty"
 
 # Fontawesome Icons - https://fontawesome.com/icons 
-UNICODE_AUDIO = " "
-UNICODE_BATTERY = " "
+UNICODE_AUDIO = " "
+UNICODE_BATTERY = "  "
 UNICODE_CHARGING = " "
 UNICODE_CPU = " "
 UNICODE_RAM = " "
@@ -230,9 +230,6 @@ screens = [
                                  "Button1": lazy.spawn(CMD_OPEN_CALENDAR)
                                  }),
 
-                # System tray
-                widget.Systray(),
-
                 widget.Spacer(),
 
                 # CPU
@@ -255,17 +252,19 @@ screens = [
                     format='{MemUsed: .3f} {mm} / {MemTotal: .3f} {mm}',
                     measure_mem="G"),
 
-                widget.Spacer(10),
+                widget.Spacer(5),
 
                 # Volume
-                widget.Volume(
-                    fmt=UNICODE_AUDIO + " {}"),
+                widget.TextBox(
+                    fmt=UNICODE_AUDIO),
+
+                widget.Volume(),
 
                 widget.Spacer(5),
 
                 # Battery 
                 widget.Battery(
-                    format=UNICODE_BATTERY + " {percent:2.0%} {char}",
+                    format=UNICODE_BATTERY + "{percent:2.0%} {char}",
                     low_percentage=0.40,
                     notify_below=40,
                     discharge_char="",
