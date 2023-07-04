@@ -5,7 +5,6 @@ shutdown='    Shutdown'
 reboot='    Reboot'
 lock='    Lock'
 suspend='    Suspend'
-logout='    Logout'
 
 # Rofi CMD
 rofi_cmd() {
@@ -22,7 +21,7 @@ rofi_cmd() {
 
 # Pass variables to rofi dmenu
 run_rofi() {
-	echo -e "$lock\n$suspend\n$logout\n$reboot\n$shutdown" | rofi_cmd
+	echo -e "$lock\n$suspend\n$reboot\n$shutdown" | rofi_cmd
 }
 
 # Actions
@@ -41,8 +40,5 @@ case ${chosen} in
     mpc -q pause
     amixer set Master mute
     systemctl suspend
-	;;
-    $logout)
-		qtile exit
 	;;
 esac
