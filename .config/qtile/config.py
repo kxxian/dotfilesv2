@@ -50,8 +50,6 @@ UNICODE_COPIED = " "
 HOME = os.path.expanduser('~')
 SCRIPT_AUTOSTART = f"{HOME}/.config/qtile/autostart.sh"
 SCRIPT_POWER_MENU = f"{HOME}/.config/rofi/powermenu.sh &"
-SCRIPT_APP_MENU = f"{HOME}/.config/rofi/launcher.sh &"
-SCRIPT_WINDOW_MENU = f"{HOME}/.config/rofi/window_launcher.sh &"
 SCRIPT_OPEN_IN_QUTEBROWSER = f"{HOME}/.config/rofi/open_in_qutebrowser.sh &"
 SCRIPT_EMOJI = f"{HOME}/.config/rofi/emoji.sh &"
 
@@ -59,6 +57,7 @@ SCRIPT_EMOJI = f"{HOME}/.config/rofi/emoji.sh &"
 CMD_OPEN_CALENDAR = "kitty --class calcurse  -o confirm_os_window_close=0 --execute calcurse"
 CMD_DOOM_EMACS = "emacsclient -c -a 'emacs'"
 CMD_FILE_MANAGER = "kitty -e ranger"
+CMD_LAUNCHER = "dmenu_run"
 CMD_SCREENSHOT = "flameshot gui"
 CMD_BRIGHTNESS_UP = "brightnessctl set 5%+"
 CMD_BRIGHTNESS_DOWN = "brightnessctl set 5%-"
@@ -122,9 +121,8 @@ keys = [
     Key([], "XF86AudioLowerVolume", lazy.spawn(CMD_AUDIO_DOWN), desc="Decrease audio volume"),
 
     # Launchers
-    Key([mod], "space", lazy.spawn(SCRIPT_APP_MENU), desc="Launch app menu"),
+    Key([mod], "d", lazy.spawn(CMD_LAUNCHER), desc="Launch dmenu"),
     Key([mod], "e", lazy.spawn(CMD_FILE_MANAGER), desc="Launch file manager"),
-    Key([alt], "w", lazy.spawn(SCRIPT_WINDOW_MENU), desc="Launch app window"),
     Key([], "Print", lazy.spawn(CMD_SCREENSHOT), desc="Launch screnshot"),
 
     # Menus 
@@ -168,7 +166,7 @@ layout_theme = dict(
         border_width=2,
         border_focus="#1793D1",
         padding=2,
-        margin=8)
+        margin=9)
 
 layouts = [
     layout.MonadTall(**layout_theme),
@@ -218,9 +216,6 @@ screens = [
                 ),
                 # NB Systray is incompatible with Wayland, consider using StatusNotifier instead
                 # widget.StatusNotifier(),
-                widget.Clipboard(
-                    fmt="Copied " + UNICODE_COPIED,
-                    max_width=2),
                 widget.Spacer(),
 
                 # Clock
@@ -228,6 +223,10 @@ screens = [
                              mouse_callbacks={
                                  "Button1": lazy.spawn(CMD_OPEN_CALENDAR)
                                  }),
+
+                widget.Clipboard(
+                    fmt="Copied " + UNICODE_COPIED,
+                    max_width=2),
 
                 widget.Spacer(),
 

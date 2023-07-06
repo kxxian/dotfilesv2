@@ -118,7 +118,7 @@ Dotfiles and instructions to make my Arch Linux portable and easy to replicate
         feh --bg-fill --randomize ~/.wallpapers/*
     ```
 
-## App Launcher and menus (Optional) - [Rofi](https://wiki.archlinux.org/title/Rofi)
+## App Launcher and menus (Optional) - [Rofi](https://wiki.archlinux.org/title/Rofi) & [dmenu](https://wiki.archlinux.org/title/dmenu) 
 - I used [adi1090x/rofi](https://github.com/adi1090x/rofi) for my rofi theme
     - Install adi1090x rofi theme
     - Run `dotfiles restore ~/.config/rofi`

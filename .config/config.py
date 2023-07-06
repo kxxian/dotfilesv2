@@ -57,6 +57,7 @@ SCRIPT_EMOJI = f"{HOME}/.config/rofi/emoji.sh &"
 CMD_OPEN_CALENDAR = "kitty --class calcurse  -o confirm_os_window_close=0 --execute calcurse"
 CMD_DOOM_EMACS = "emacsclient -c -a 'emacs'"
 CMD_FILE_MANAGER = "kitty -e ranger"
+CMD_LAUNCHER = "dmenu_run"
 CMD_SCREENSHOT = "flameshot gui"
 CMD_BRIGHTNESS_UP = "brightnessctl set 5%+"
 CMD_BRIGHTNESS_DOWN = "brightnessctl set 5%-"
@@ -120,7 +121,7 @@ keys = [
     Key([], "XF86AudioLowerVolume", lazy.spawn(CMD_AUDIO_DOWN), desc="Decrease audio volume"),
 
     # Launchers
-    Key([mod], "r", lazy.spawncmd(), desc="Spawn a command using a promt widget"),
+    Key([mod], "r", lazy.spawn(CMD_LAUNCHER), desc="Launch dmenu"),
     Key([mod], "e", lazy.spawn(CMD_FILE_MANAGER), desc="Launch file manager"),
     Key([], "Print", lazy.spawn(CMD_SCREENSHOT), desc="Launch screnshot"),
 
