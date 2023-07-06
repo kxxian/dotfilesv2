@@ -121,7 +121,7 @@ keys = [
     Key([], "XF86AudioLowerVolume", lazy.spawn(CMD_AUDIO_DOWN), desc="Decrease audio volume"),
 
     # Launchers
-    Key([mod], "d", lazy.spawn(CMD_LAUNCHER), desc="Launch dmenu"),
+    Key([mod], "r", lazy.spawn(CMD_LAUNCHER), desc="Launch dmenu"),
     Key([mod], "e", lazy.spawn(CMD_FILE_MANAGER), desc="Launch file manager"),
     Key([], "Print", lazy.spawn(CMD_SCREENSHOT), desc="Launch screnshot"),
 
@@ -166,7 +166,7 @@ layout_theme = dict(
         border_width=2,
         border_focus="#1793D1",
         padding=2,
-        margin=9)
+        margin=8)
 
 layouts = [
     layout.MonadTall(**layout_theme),
