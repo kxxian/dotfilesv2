@@ -17,7 +17,7 @@ Dotfiles and instructions to make my Arch Linux portable and easy to replicate
    Bootloader: grub
    Profile: xorg
    Audio: pipeware
-   NetworkConfiguration: Copy ISO
+   NetworkConfiguration: NetworkManager
    AdditionalPackages: [
         vi,                 # Text Editor
         vim,                # Test Editor
