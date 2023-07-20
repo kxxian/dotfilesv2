@@ -20,13 +20,13 @@ Dotfiles and instructions to make my Arch Linux portable and easy to replicate
    NetworkConfiguration: NetworkManager
    AdditionalPackages: [
         vi,                 # Text Editor
-        vim,                # Test Editor
+        vim,                # Text Editor
+        neovim,             # Text Editor / IDE
         git,                # Git
         qtile,              # Window manager
         qutebrowser,        # Web Browser
         zip,                # Zip command
         unzip,              # Unzip command
-        neovim,             # Text Editor / IDE
         brightnessctl,      # Brightness control
         zsh,                # Shell
         kitty,              # Terminal Emulator
