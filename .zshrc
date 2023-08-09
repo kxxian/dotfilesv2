@@ -18,6 +18,9 @@ alias ls="exa --icons"
 # Git alias 
 alias g="git"
 
+# Sail alias
+alias sail='bash vendor/bin/sail'
+
 # Alias for lazyness
 alias cc="clear"
 alias rw="feh --bg-fill --randomize /$HOME/.wallpapers/*"
