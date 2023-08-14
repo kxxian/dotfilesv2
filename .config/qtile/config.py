@@ -52,6 +52,7 @@ SCRIPT_AUTOSTART = f"{HOME}/.config/qtile/autostart.sh"
 SCRIPT_POWER_MENU = f"{HOME}/.config/rofi/powermenu.sh &"
 SCRIPT_OPEN_IN_QUTEBROWSER = f"{HOME}/.config/rofi/open_in_qutebrowser.sh &"
 SCRIPT_EMOJI = f"{HOME}/.config/rofi/emoji.sh &"
+SCRIPT_LAUNCHER = f"{HOME}/.config/rofi/launcher.sh"
 
 # Commands 
 CMD_OPEN_CALENDAR = "kitty --class calcurse  -o confirm_os_window_close=0 --execute calcurse"
@@ -128,6 +129,7 @@ keys = [
     # Menus 
     Key([mod], "p", lazy.spawn(SCRIPT_POWER_MENU), desc="Launch power menu"),
     Key([mod], "q", lazy.spawn(SCRIPT_OPEN_IN_QUTEBROWSER), desc="Open Qutebrowser shortcut"),
+    Key([mod], "m", lazy.spawn(SCRIPT_LAUNCHER), desc="Open Launcher"),
     Key([mod, "shift"], "Equal", lazy.spawn(SCRIPT_EMOJI), desc="Launch emoji list"),
 
     # Settings
