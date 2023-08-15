@@ -19,7 +19,10 @@ alias ls="exa --icons"
 alias g="git"
 
 # Sail alias
-alias sail='bash vendor/bin/sail'
+alias sail="bash vendor/bin/sail"
+
+# Fix lockscreen wallpaper 
+alias fixlw="betterlockscreen -u ~/.wallpapers"
 
 # Alias for lazyness
 alias cc="clear"
