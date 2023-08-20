@@ -144,7 +144,7 @@ config.set('content.images', True, 'devtools://*')
 # QtWebEngine, writing the clipboard as response to a user interaction
 # is always allowed.
 # Type: Bool
-c.content.javascript.can_access_clipboard = True
+c.content.javascript.clipboard = 'access-paste'
 
 # Enable JavaScript.
 # Type: Bool
