@@ -22,12 +22,11 @@ alias g="git"
 alias sail="bash vendor/bin/sail"
 
 # Fix lockscreen wallpaper 
-alias fixlw="betterlockscreen -u ~/.wallpapers"
+alias blr="betterlockscreen -u ~/.wallpapers"
 
 # Alias for lazyness
 alias cc="clear"
-alias rw="feh --bg-fill --randomize /$HOME/.wallpapers/*"
-alias rl="betterlockscreen -u /$HOME/.wallpapers"
+alias sbg="feh --bg-fill --randomize /$HOME/.wallpapers/*"
 alias archm=". $HOME/shell_scripts/archm.sh"
 alias snaps=". $HOME/shell_scripts/snaps.sh"
 alias snapl=". $HOME/shell_scripts/snapl.sh"
