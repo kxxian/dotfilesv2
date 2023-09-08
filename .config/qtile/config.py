@@ -34,12 +34,13 @@ from libqtile.lazy import lazy
 # Globals
 WIDGET_FONT = "Font Awesome 6 Bold"
 
+
 mod = "mod4"
 alt = "mod1"
 terminal = "kitty"
 
 # Fontawesome Icons - https://fontawesome.com/icons 
-UNICODE_AUDIO = " "
+UNICODE_AUDIO = " "
 UNICODE_BATTERY = "  "
 UNICODE_CHARGING = " "
 UNICODE_CPU = " "
@@ -124,6 +125,7 @@ keys = [
     # Launchers
     Key([mod], "d", lazy.spawn(CMD_LAUNCHER), desc="Launch dmenu"),
     Key([mod], "e", lazy.spawn(CMD_FILE_MANAGER), desc="Launch file manager"),
+    Key([mod], "c", lazy.spawn(CMD_OPEN_CALENDAR), desc="Launch calcurse"),
     Key([], "Print", lazy.spawn(CMD_SCREENSHOT), desc="Launch screnshot"),
 
     # Menus 
@@ -168,7 +170,7 @@ layout_theme = dict(
         border_width=2,
         border_focus="#1793D1",
         padding=2,
-        margin=9)
+        margin=8)
 
 layouts = [
     layout.MonadTall(**layout_theme),
@@ -189,7 +191,7 @@ layouts = [
 widget_defaults = dict(
     font=WIDGET_FONT,
     fontsize=12,
-    padding=3,
+    padding=2,
 )
 extension_defaults = widget_defaults.copy()
 
@@ -210,7 +212,7 @@ screens = [
                 widget.Spacer(5), 
 
                 widget.GroupBox(
-                    highlight_method="box",
+                    highlight_method="line",
                     hide_unused=True),
                 widget.Prompt(),
                 widget.Chord(
@@ -273,9 +275,11 @@ screens = [
                     show_short_text=True),
                 widget.Spacer(10),
             ],
-            24,
-            # border_width=[2, 0, 2, 0],  # Draw top and bottom borders
-            # border_color=["ff00ff", "000000", "ff00ff", "000000"]  # Borders are magenta
+            23,
+            margin=[5, 10, 0, 10],
+            border_width=2,
+            #border_width=[5, 0, 0, 10],  # Draw top and bottom borders
+            #border_color=["#ffffff", "000000", "#00000000", "000000"]
         ),
     ),
 ]
