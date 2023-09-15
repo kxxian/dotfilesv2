@@ -22,7 +22,7 @@ alias g="git"
 alias sail="bash vendor/bin/sail"
 
 # Fix lockscreen wallpaper 
-alias blr="betterlockscreen -u ~/.wallpapers"
+alias blr="betterlockscreen -u ~/.lockscreen"
 
 # Alias for lazyness
 alias cc="clear"
