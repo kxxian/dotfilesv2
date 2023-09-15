@@ -2,7 +2,7 @@
 Dotfiles and instructions to make my Arch Linux portable and easy to replicate
 
 ## Last Screenshot
-![image](https://github.com/devx-ph/dotfilesv2/blob/main/screenshot.jpg?raw=true)
+![image](https://github.com/devx-ph/dotfilesv2/blob/main/screenshot.png?raw=true)
 
 # How I Installed Arch Linux
 
